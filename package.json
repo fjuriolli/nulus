@@ -1,8 +1,8 @@
 {
   "name": "nulus",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "description": "Manage your time suitable with more focus",
+  "productName": "Pomodoro App",
   "cordovaId": "n",
   "author": "Fernando Juriolli <fjuriolli@gmail.com>",
   "private": true,
