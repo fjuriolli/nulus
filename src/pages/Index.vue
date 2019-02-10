@@ -147,7 +147,7 @@
                 }
                 this.timer = setInterval(() => this.countdown(), 1000)
                 this.resetButton = true
-                this.title = 'Bora trabalhar'
+                this.title = 'Período de trabalho'
             },
             addNumberOfPomodorosWorked () {
                 this.numberOfPomodoros++
@@ -203,7 +203,7 @@
                 this.totalTime = (25 * 60)
                 clearInterval(this.timer)
                 this.timer = null
-                this.title = 'Bora trabalhar'
+                this.title = 'Período de trabalho'
                 this.timer = setInterval(() => this.countdown(), 1000)
                 this.breakTime = false
                 this.resetButton = true
