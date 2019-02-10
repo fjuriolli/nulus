@@ -141,7 +141,7 @@
             return {
                 titleStyle: {'class': 'q-pt-lg q-display-2', equivalent: 'h1', color: 56, weight: 300},
                 timer: null,
-                totalTime: (25 * 60),
+                totalTime: (1* 3),
                 resetButton: false,
                 numberOfPomodoros: 0,
                 breakTime: false,
@@ -219,6 +219,7 @@
                 this.addNumberOfPomodorosWorked()
             },
             breakFiveMinutes () {
+                audio.pause()
                 clearInterval(this.timer)
                 this.breakTime = true
                 this.totalTime = (5 * 60)
@@ -227,6 +228,7 @@
                 this.title = 'Intervalo 5 minutos'
             },
             breakFiveFifteenMinutes () {
+                audio.pause()
                 clearInterval(this.timer)
                 this.breakTime = true
                 this.totalTime = (15 * 60)
