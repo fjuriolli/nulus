@@ -141,7 +141,7 @@
             return {
                 titleStyle: {'class': 'q-pt-lg q-display-2', equivalent: 'h1', color: 56, weight: 300},
                 timer: null,
-                totalTime: (1* 3),
+                totalTime: (25 * 60),
                 resetButton: false,
                 numberOfPomodoros: 0,
                 breakTime: false,
