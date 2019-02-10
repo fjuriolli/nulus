@@ -4,6 +4,15 @@
       <span :class="[titleStyle.class, `${titleStyle.class}-opacity`]">{{title}}</span>
     </div>
     <span class="subTitle">Número de pomodoros trabalhados: {{numberOfPomodoros}}</span>
+    <span class="info" style="color:#13CEEB; font-size: 22px;">
+        <i class="material-icons">info</i>
+      <q-tooltip>
+        Atalhos do teclado:<br>
+        - Seta para cima: adicionar 1 ciclo de trabalho concluído<br>
+        - Seta para baixo: remover 1 ciclo de trabalho concluído<br>
+        - Número 5: intervalo de 5 minutos
+      </q-tooltip>
+    </span>
     <div class="q-pb-sm row justify-center full-height full-width text-center">
       <q-card color="primary">
         <div id="timer">
@@ -260,6 +269,10 @@
     margin-botton: -10px;
     padding-top: -20px;
     font-size: 90px;
+  }
+  .info {
+    margin-top: 10px;
+    margin-left: 2px;
   }
   .subTitle {
     font-weight: bold;
