@@ -4,7 +4,7 @@
       <span :class="[titleStyle.class, `${titleStyle.class}-opacity`]">{{title}}</span>
     </div>
     <span class="subTitle">Número de pomodoros trabalhados: {{numberOfPomodoros}}</span>
-    <span class="info" style="color:#13CEEB; font-size: 22px;">
+    <span class="info desktop-only" style="color:#13CEEB; font-size: 22px;">
         <i class="material-icons">info</i>
       <q-tooltip>
         Atalhos do teclado:<br>
