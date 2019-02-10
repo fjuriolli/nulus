@@ -119,6 +119,7 @@
 
 <script>
     const audio = new Audio('./../statics/alarm.mp3')
+    import { Dialog } from 'quasar'
 
     export default {
         name: 'PageIndex',
@@ -182,9 +183,17 @@
                 })
             },
             resetNumberOfPomodoros () {
-                this.numberOfPomodoros = 0
-                this.resetPomodoro()
-                this.$router.go(0)
+                this.$q.dialog({
+                    title: 'Aviso',
+                    message: 'Tem certeza que deseja resetar o pomodoro? Todas as informações atuais serão perdidas',
+                    ok: 'Confirmar',
+                    cancel: 'Cancelar'
+                }).then(() => {
+                    this.numberOfPomodoros = 0
+                    this.resetPomodoro()
+                    this.$router.go(0)
+                }).catch(() => {})
+                // nothing
             },
             stopTimer () {
                 clearInterval(this.timer)
