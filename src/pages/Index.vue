@@ -136,7 +136,7 @@
                 resetButton: false,
                 numberOfPomodoros: 0,
                 breakTime: false,
-                title: 'Clique no play e comece a trabalhar!'
+                title: 'Clique no play e comece a trabalhar'
             }
         },
         methods: {
@@ -203,7 +203,7 @@
                 this.totalTime = (25 * 60)
                 clearInterval(this.timer)
                 this.timer = null
-                this.title = 'Bora trabalhar!'
+                this.title = 'Bora trabalhar'
                 this.timer = setInterval(() => this.countdown(), 1000)
                 this.breakTime = false
                 this.resetButton = true
