@@ -1,3 +1,3 @@
-# Pomodoro App
+# Quasar App
 
 > WIP
