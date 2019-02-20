@@ -111,7 +111,7 @@
       <button hidden v-shortkey="{down: ['arrowdown']}" @shortkey="removeNumberOfPomodorosWorked()"></button>
       <button hidden v-shortkey="['5']" @shortkey="breakFiveMinutes()"></button>
       <button hidden v-shortkey="['ctrl', 'shift']" @shortkey="playAudio()"></button>
-      <button hidden v-shortkey="['ctrl', 'a']" @shortkey="playToasty()"></button>
+      <button hidden class="toasty" v-shortkey="['ctrl', 'a']" @shortkey="playToasty()"></button>
 
     </div>
   </div>
@@ -304,5 +304,9 @@
     color: grey;
     margin-top: 15px;
     margin-bottom: 5px;
+  }
+  .toasty {
+    width:150px;
+    height:150px;
   }
 </style>
