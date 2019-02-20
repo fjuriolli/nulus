@@ -10,7 +10,8 @@
         Atalhos do teclado:<br>
         - Seta para cima: adicionar 1 ciclo de trabalho concluído<br>
         - Seta para baixo: remover 1 ciclo de trabalho concluído<br>
-        - Número 5: intervalo de 5 minutos
+        - Número 5: intervalo de 5 minutos<br>
+        - Control + A: easter egg
       </q-tooltip>
     </span>
     <div class="q-pb-sm row justify-center full-height full-width text-center">
@@ -63,7 +64,7 @@
                label="Intervalo 15 min"
                color="primary"
                v-if="!timer"
-               @click="breakFiveFifteenMinutes">
+               @click="breakFifteenMinutes">
         </q-btn>
       </div>
 
@@ -110,6 +111,7 @@
       <button hidden v-shortkey="{down: ['arrowdown']}" @shortkey="removeNumberOfPomodorosWorked()"></button>
       <button hidden v-shortkey="['5']" @shortkey="breakFiveMinutes()"></button>
       <button hidden v-shortkey="['ctrl', 'shift']" @shortkey="playAudio()"></button>
+      <button hidden v-shortkey="['ctrl', 'a']" @shortkey="playToasty()"></button>
 
     </div>
   </div>
@@ -122,6 +124,8 @@
     const alarm = new Audio('./../statics/alarm.mp3')
     const audio = new Audio('./../statics/audio.mp3')
     import { Dialog } from 'quasar'
+    import toasty from 'toasty'
+
 
     export default {
         name: 'PageIndex',
@@ -161,8 +165,12 @@
                 this.resetButton = true
                 this.title = 'Período de trabalho'
             },
+            playToasty () {
+                let t = toasty();
+                t.trigger();
+            },
             playAudio () {
-              audio.play()
+                audio.play()
             },
             addNumberOfPomodorosWorked () {
                 this.numberOfPomodoros++
@@ -241,7 +249,7 @@
                 this.resetButton = true
                 this.title = 'Intervalo 5 minutos'
             },
-            breakFiveFifteenMinutes () {
+            breakFifteenMinutes () {
                 alarm.pause()
                 clearInterval(this.timer)
                 this.breakTime = true
