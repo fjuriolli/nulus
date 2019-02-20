@@ -109,6 +109,7 @@
       <button hidden v-shortkey="{up: ['arrowup']}" @shortkey="addNumberOfPomodorosWorked()"></button>
       <button hidden v-shortkey="{down: ['arrowdown']}" @shortkey="removeNumberOfPomodorosWorked()"></button>
       <button hidden v-shortkey="['5']" @shortkey="breakFiveMinutes()"></button>
+      <button hidden v-shortkey="['ctrl', 'shift']" @shortkey="playAudio()"></button>
 
     </div>
   </div>
@@ -118,7 +119,8 @@
 </style>
 
 <script>
-    const audio = new Audio('./../statics/alarm.mp3')
+    const alarm = new Audio('./../statics/alarm.mp3')
+    const audio = new Audio('./../statics/audio.mp3')
     import { Dialog } from 'quasar'
 
     export default {
@@ -159,6 +161,9 @@
                 this.resetButton = true
                 this.title = 'Período de trabalho'
             },
+            playAudio () {
+              audio.play()
+            },
             addNumberOfPomodorosWorked () {
                 this.numberOfPomodoros++
                 this.$q.notify({
@@ -197,19 +202,19 @@
             },
             stopTimer () {
                 clearInterval(this.timer)
-                audio.pause()
+                alarm.pause()
                 this.timer = null
                 this.resetButton = true
                 this.title = 'O timer está pausado'
             },
             resetPomodoro () {
-                audio.pause()
+                alarm.pause()
                 clearInterval(this.timer)
                 this.timer = null
                 this.resetButton = false
             },
             resetTimer () {
-                audio.pause()
+                alarm.pause()
                 this.totalTime = (25 * 60)
                 clearInterval(this.timer)
                 this.timer = null
@@ -217,7 +222,7 @@
                 this.title = 'O timer foi resetado'
             },
             resetTimerAndBeginAnotherPomodoroCicle () {
-                audio.pause()
+                alarm.pause()
                 this.totalTime = (25 * 60)
                 clearInterval(this.timer)
                 this.timer = null
@@ -228,7 +233,7 @@
                 this.addNumberOfPomodorosWorked()
             },
             breakFiveMinutes () {
-                audio.pause()
+                alarm.pause()
                 clearInterval(this.timer)
                 this.breakTime = true
                 this.totalTime = (5 * 60)
@@ -237,7 +242,7 @@
                 this.title = 'Intervalo 5 minutos'
             },
             breakFiveFifteenMinutes () {
-                audio.pause()
+                alarm.pause()
                 clearInterval(this.timer)
                 this.breakTime = true
                 this.totalTime = (15 * 60)
@@ -259,11 +264,11 @@
                 }
             },
             play () {
-                if (audio.paused) {
-                    audio.play()
+                if (alarm.paused) {
+                    alarm.play()
                 } else {
-                    audio.pause()
-                    audio.currentTime = 0
+                    alarm.pause()
+                    alarm.currentTime = 0
                 }
             }
         },
