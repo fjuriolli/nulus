@@ -1,4 +1,4 @@
-# Pomodoro App
+# Nulus Pomodoro App
 
 Created with [VueJs](https://github.com/vuejs) and [Quasar Framework](https://github.com/quasarframework/quasar) using [ExpressJs](https://github.com/expressjs)
 
