@@ -44,7 +44,7 @@
             <q-btn class="q-ma-xs"
                    icon="replay"
                    round color="primary"
-                   v-if="resetButton && !this.breakTime"
+                   v-if="resetButton || this.breakTime === true"
                    @click="resetTimer">
             </q-btn>
 
@@ -53,7 +53,7 @@
                 <q-btn class="q-ma-xs"
                        label="Intervalo 5 min"
                        color="primary"
-                       v-if="!timer"
+                       v-if="this.breakTime === false"
                        @click="breakFiveMinutes">
                 </q-btn>
             </div>
@@ -63,7 +63,7 @@
                 <q-btn class="q-ma-xs"
                        label="Intervalo 15 min"
                        color="primary"
-                       v-if="!timer"
+                       v-if="this.breakTime === false"
                        @click="breakFifteenMinutes">
                 </q-btn>
             </div>
@@ -243,6 +243,7 @@
         clearInterval(this.timer)
         this.timer = null
         this.resetButton = false
+        this.breakTime = false
         this.title = 'O timer foi resetado'
       },
       resetTimerAndBeginAnotherPomodoroCicle() {
