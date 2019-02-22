@@ -115,6 +115,8 @@
                     <q-card-separator />
                     <q-card-main class="">
                         <b>Pomodoro atual:</b> {{ +numberOfPomodoros + 1 }}º ciclo<br>
+                        <span v-if="this.numberOfPomodoros === 3 || this.numberOfPomodoros === 7 || this.numberOfPomodoros === 11 || this.numberOfPomodoros === 15"><b class="interval_info">Próximo intervalo: 15 minutos</b><br></span>
+                        <span v-else><b class="interval_info">Próximo intervalo: 5 minutos</b><br></span>
                         <br>
                         <b>Próximo pomodoro:</b> {{ +numberOfPomodoros + 2 }}º ciclo
                     </q-card-main>
@@ -131,9 +133,6 @@
         </div>
     </div>
 </template>
-
-<style>
-</style>
 
 <script>
   const alarm = new Audio('./../statics/alarm.mp3')
@@ -171,6 +170,9 @@
       }
     },
     methods: {
+      // calculateNextInterval() {
+      //   if (this.numberOfPomodoros === )
+      // },
       startTimer() {
         this.breakTime = false
         if (this.totalTime === 0) {
@@ -310,6 +312,10 @@
         margin-botton: -10px;
         padding-top: -20px;
         font-size: 90px;
+    }
+
+    .interval_info {
+        color: green;
     }
 
     .info {
