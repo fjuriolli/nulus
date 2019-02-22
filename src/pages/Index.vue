@@ -106,18 +106,20 @@
                 </q-btn>
             </div>
 
-            <q-card class="q-ma-lg">
-                <q-card-title>
-                    <q-icon class="icon_alarm" slot="right" name="alarm"/>
-                    Resumo Pomodoro
-                </q-card-title>
-                <q-card-separator />
-                <q-card-main class="">
-                    <b>Pomodoro atual:</b> {{ +numberOfPomodoros + 1 }}º ciclo<br>
-                    <br>
-                    <b>Próximo pomodoro:</b> {{ +numberOfPomodoros + 2 }}º ciclo
-                </q-card-main>
-            </q-card>
+            <div class="q-pb-sm row justify-center text-center">
+                <q-card class="q-ma-lg" style="width: 300px">
+                    <q-card-title>
+                        <q-icon class="icon_alarm" slot="right" name="alarm"/>
+                        Resumo Pomodoro
+                    </q-card-title>
+                    <q-card-separator />
+                    <q-card-main class="">
+                        <b>Pomodoro atual:</b> {{ +numberOfPomodoros + 1 }}º ciclo<br>
+                        <br>
+                        <b>Próximo pomodoro:</b> {{ +numberOfPomodoros + 2 }}º ciclo
+                    </q-card-main>
+                </q-card>
+            </div>
 
             <!-- Hidden buttons for shortkey only (vue-shortkey)-->
             <button hidden v-shortkey="{up: ['arrowup']}" @shortkey="addNumberOfPomodorosWorked()"></button>
