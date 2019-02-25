@@ -3,7 +3,7 @@
         <div class="row justify-center full-height full-width text-center">
             <span :class="[titleStyle.class, `${titleStyle.class}-opacity`]">{{title}}</span>
         </div>
-        <span class="subTitle">Número de pomodoros já concluídos: {{numberOfPomodoros}}</span>
+        <span class="subTitle">Número de pomodoros concluídos: {{numberOfPomodoros}}</span>
         <span class="info desktop-only" style="color:#13CEEB; font-size: 22px;">
         <i class="material-icons">info</i>
       <q-tooltip>
@@ -11,7 +11,7 @@
         - Seta para cima: adicionar 1 ciclo de trabalho concluído<br>
         - Seta para baixo: remover 1 ciclo de trabalho concluído<br>
         - Número 5: intervalo de 5 minutos<br>
-        - Control + A: easter egg
+        - Control + A: easter egg =D
       </q-tooltip>
     </span>
         <div class="q-pb-sm row justify-center full-height full-width text-center">
@@ -23,7 +23,7 @@
                 </div>
             </q-card>
         </div>
-        <div class="">
+        <div>
             <!-- Start timer -->
             <q-btn class="q-ma-xs"
                    icon="play_arrow"
@@ -68,7 +68,7 @@
                 </q-btn>
             </div>
 
-            <!-- Another Pomodoro Cicle -->
+            <!-- Add Another Pomodoro Cicle -->
             <q-btn class="q-ma-xs"
                    label="+25 minutos"
                    v-if="this.breakTime"
@@ -137,9 +137,8 @@
 <script>
   const alarm = new Audio('./../statics/alarm.mp3')
   const audio = new Audio('./../statics/audio.mp3')
-  import {Dialog} from 'quasar'
+  import { Dialog } from 'quasar'
   import toasty from 'toasty'
-
 
   export default {
     name: 'PageIndex',
@@ -170,9 +169,6 @@
       }
     },
     methods: {
-      // calculateNextInterval() {
-      //   if (this.numberOfPomodoros === )
-      // },
       startTimer() {
         this.breakTime = false
         if (this.totalTime === 0) {
