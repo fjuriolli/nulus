@@ -1,5 +1,6 @@
 <template>
     <div class="row justify-center full-height full-width text-center">
+        <vue-headful :title="`${headTitle} - ${title}`"/>
         <div class="row justify-center full-height full-width text-center">
             <span :class="[titleStyle.class, `${titleStyle.class}-opacity`]">{{title}}</span>
         </div>
@@ -139,6 +140,7 @@
   const audio = new Audio('./../statics/audio.mp3')
   import { Dialog } from 'quasar'
   import toasty from 'toasty'
+  import './../css/Index.css'
 
   export default {
     name: 'PageIndex',
@@ -155,6 +157,9 @@
       seconds() {
         const seconds = this.totalTime - (this.minutes * 60)
         return this.padTime(seconds)
+      },
+      headTitle() {
+        return this.minutes + ':' + this.seconds
       }
     },
     data() {
@@ -300,39 +305,3 @@
     }
   }
 </script>
-
-<style>
-    #timer {
-        margin-right: 20px;
-        margin-left: 20px;
-        margin-botton: -10px;
-        padding-top: -20px;
-        font-size: 90px;
-    }
-
-    .interval_info {
-        color: green;
-    }
-
-    .info {
-        margin-top: 10px;
-        margin-left: 2px;
-    }
-
-    .icon_alarm {
-        margin-bottom: 5px;
-    }
-
-    .subTitle {
-        font-weight: bold;
-        opacity: 0.9;
-        color: grey;
-        margin-top: 15px;
-        margin-bottom: 5px;
-    }
-
-    .toasty {
-        width: 150px;
-        height: 150px;
-    }
-</style>

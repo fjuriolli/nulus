@@ -1,0 +1,32 @@
+#timer {
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-top: -20px;
+  font-size: 90px;
+}
+
+.interval_info {
+  color: green;
+}
+
+.info {
+  margin-top: 10px;
+  margin-left: 2px;
+}
+
+.icon_alarm {
+  margin-bottom: 5px;
+}
+
+.subTitle {
+  font-weight: bold;
+  opacity: 0.9;
+  color: grey;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.toasty {
+  width: 150px;
+  height: 150px;
+}

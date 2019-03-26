@@ -17,6 +17,7 @@
     "express": "^4.16.4",
     "serve-static": "^1.13.2",
     "toasty": "^6.0.3",
+    "vue-headful": "^2.0.1",
     "vue-shortkey": "^3.1.6"
   },
   "devDependencies": {
