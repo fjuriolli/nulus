@@ -11,5 +11,3 @@ The pomodoro technique is a time management method that can be applied to variou
 The concept of pomodoro is that the person who studies or performs a task takes exactly 25 minutes. Concluding it or not, it should stop and rest 5 minutes. After rest, another 25-minute work cycle starts again.
 
 To learn more about the pomodoro technique, visit this [link](https://en.wikipedia.org/wiki/Pomodoro_Technique)
-
-*To do: translate the app to english*
